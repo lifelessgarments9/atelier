@@ -1,17 +1,19 @@
-﻿# === BACKEND ===
+﻿# BACKEND
 atelier-backend/bin/
 atelier-backend/obj/
-atelier-backend/.vs/
-atelier-backend/*.csproj.user
+MyApi/bin/
+MyApi/obj/
+MyApi/.vs/
 
-# === FRONTEND ===  
+# FRONTEND
 atelier-frontend/node_modules/
 atelier-frontend/build/
 
-# === IDE ===
-# НЕ ИГНОРИРУЕМ .idea/ - пусть Rider создает заново
-# .idea/
+# IDE
+.idea/
 
-# === SYSTEM ===
+# SYSTEM
 .DS_Store
 *.log
+*.user
+*.suo
