@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+
 using MyApi.Models;
 namespace MyApi.Controllers;
 
@@ -14,44 +14,101 @@ public class OrdersController : ControllerBase
         _context = context;
     }
 
-    // Получить все заказы
+    // GET: api/orders - возвращаем OrderDto
     [HttpGet]
     public IActionResult GetAll()
     {
         var orders = _context.Orders
             .OrderByDescending(o => o.CreatedAt)
-            .ToList();
+            .ToList()
+            .Select(o => new OrderDto
+            {
+                Id = o.Id,
+                CustomerName = o.CustomerName,
+                TgUsername = o.TgUsername,
+                Phone = o.Phone,
+                ServiceIds = o.ServiceIds,
+                ServiceNames = o.ServiceNames,
+                TotalPrice = o.TotalPrice,
+                Status = o.Status,
+                CreatedAt = o.CreatedAt,
+                UpdatedAt = o.UpdatedAt
+            });
+        
         return Ok(orders);
     }
 
-    // Получить заказ по ID
+    // GET: api/orders/5 - возвращаем OrderDto
     [HttpGet("{id}")]
     public IActionResult GetById(int id)
     {
         var order = _context.Orders.Find(id);
         if (order == null)
             return NotFound($"Заказ с ID {id} не найден.");
-        return Ok(order);
+        
+        return Ok(MapToDto(order));
     }
 
-    // Добавить новый заказ
+    // POST: api/orders - принимаем OrderDto (без ID)
     [HttpPost]
-    public IActionResult Create([FromBody] Order newOrder)
+    public IActionResult Create([FromBody] OrderDto orderDto)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
-        newOrder.CreatedAt = DateTime.UtcNow;
-        newOrder.UpdatedAt = DateTime.UtcNow;
-        newOrder.Status = string.IsNullOrEmpty(newOrder.Status) ? "Новый" : newOrder.Status;
+        // Проверяем что ID не передан (для создания)
+        if (orderDto.Id.HasValue)
+            return BadRequest("Не указывайте ID при создании заказа");
+
+        var newOrder = new Order
+        {
+            CustomerName = orderDto.CustomerName,
+            TgUsername = orderDto.TgUsername,
+            Phone = orderDto.Phone,
+            ServiceIds = orderDto.ServiceIds,
+            ServiceNames = orderDto.ServiceNames,
+            TotalPrice = orderDto.TotalPrice,
+            Status = orderDto.Status ?? "Новый",
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
+        };
 
         _context.Orders.Add(newOrder);
         _context.SaveChanges();
 
-        return CreatedAtAction(nameof(GetById), new { id = newOrder.Id }, newOrder);
+        return CreatedAtAction(nameof(GetById), new { id = newOrder.Id }, MapToDto(newOrder));
     }
 
-    // Обновить статус заказа
+    // PUT: api/orders/5 - принимаем OrderDto
+    [HttpPut("{id}")]
+    public IActionResult Update(int id, [FromBody] OrderDto orderDto)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        var order = _context.Orders.Find(id);
+        if (order == null)
+            return NotFound();
+
+        // Проверяем что ID в пути совпадает с ID в DTO (если указан)
+        if (orderDto.Id.HasValue && orderDto.Id.Value != id)
+            return BadRequest("ID в пути не совпадает с ID в теле запроса");
+
+        order.CustomerName = orderDto.CustomerName;
+        order.TgUsername = orderDto.TgUsername;
+        order.Phone = orderDto.Phone;
+        order.ServiceIds = orderDto.ServiceIds;
+        order.ServiceNames = orderDto.ServiceNames;
+        order.TotalPrice = orderDto.TotalPrice;
+        order.Status = orderDto.Status ?? order.Status;
+        order.UpdatedAt = DateTime.UtcNow;
+
+        _context.SaveChanges();
+        
+        return Ok(MapToDto(order));
+    }
+
+    // PATCH: api/orders/5/status
     [HttpPatch("{id}/status")]
     public IActionResult UpdateStatus(int id, [FromBody] string newStatus)
     {
@@ -61,33 +118,12 @@ public class OrdersController : ControllerBase
 
         order.Status = newStatus;
         order.UpdatedAt = DateTime.UtcNow;
-
         _context.SaveChanges();
-        return Ok(order);
+        
+        return Ok(new { message = "Статус обновлен", status = newStatus });
     }
 
-    // Полное обновление (PUT)
-    [HttpPut("{id}")]
-    public IActionResult Update(int id, [FromBody] Order updated)
-    {
-        var order = _context.Orders.Find(id);
-        if (order == null)
-            return NotFound();
-
-        order.CustomerName = updated.CustomerName;
-        order.TgUsername = updated.TgUsername;
-        order.Phone = updated.Phone;
-        order.ServiceIds = updated.ServiceIds;
-        order.ServiceNames = updated.ServiceNames;
-        order.TotalPrice = updated.TotalPrice;
-        order.Status = updated.Status;
-        order.UpdatedAt = DateTime.UtcNow;
-
-        _context.SaveChanges();
-        return Ok(order);
-    }
-
-    // Удалить заказ
+    // DELETE: api/orders/5
     [HttpDelete("{id}")]
     public IActionResult Delete(int id)
     {
@@ -97,11 +133,26 @@ public class OrdersController : ControllerBase
 
         _context.Orders.Remove(order);
         _context.SaveChanges();
-
         return NoContent();
     }
 
-
+    // Метод для преобразования Entity → DTO
+    private OrderDto MapToDto(Order order)
+    {
+        return new OrderDto
+        {
+            Id = order.Id,
+            CustomerName = order.CustomerName,
+            TgUsername = order.TgUsername,
+            Phone = order.Phone,
+            ServiceIds = order.ServiceIds,
+            ServiceNames = order.ServiceNames,
+            TotalPrice = order.TotalPrice,
+            Status = order.Status,
+            CreatedAt = order.CreatedAt,
+            UpdatedAt = order.UpdatedAt
+        };
+    }
 }
 
 /* (http взаимодействие с бд)

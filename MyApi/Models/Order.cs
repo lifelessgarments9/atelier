@@ -1,6 +1,8 @@
 using System.ComponentModel.DataAnnotations;
 namespace MyApi.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
+[Table("Orders")]
 public class Order
 {
     [Key]

@@ -62,3 +62,6 @@ C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\OpenTelemetry.Extensions.Hosting.d
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\BCrypt.Net-Next.dll
+C:\tmp\аип\Solution\MyApi\obj\Debug\net9.0\MyApi.sourcelink.json
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.Annotations.dll

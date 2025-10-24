@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict XjXF5a1r3CAubecKcCHA7wG1FEZgEvKRV2T3Qblg5wFFd5fF5kB3jEd0NHSyQd3
+\restrict EBfNDfgpVpp678ZC1MJJiwFdlym2w8kpf0zebzDd6J5psS8oGJ5jORTmU6Aefy8
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
 
--- Started on 2025-10-23 20:12:24
+-- Started on 2025-10-24 11:55:20
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -39,11 +39,11 @@ CREATE TABLE public.orders (
     serviceids integer[] NOT NULL,
     servicenames text[] NOT NULL,
     totalprice numeric(10,2) NOT NULL,
-    status character varying(50) DEFAULT 'Ќ®ўл©'::character varying,
+    status character varying(50) DEFAULT 'New'::character varying,
     createdat timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     updatedat timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     doneat timestamp without time zone,
-    CONSTRAINT orders_status_check CHECK (((status)::text = ANY ((ARRAY['Ќ®ўл©'::character varying, '‚ а Ў®вҐ'::character varying, 'ѓ®в®ў'::character varying, '‚л¤ ­'::character varying])::text[])))
+    CONSTRAINT orders_status_check CHECK (((status)::text = ANY ((ARRAY['New'::character varying, 'InProgress'::character varying, 'Ready'::character varying, 'Issued'::character varying])::text[])))
 );
 
 
@@ -243,7 +243,7 @@ COPY public.users (id, tgusername, passwordhash, firstname, lastname, phone, cre
 -- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.orders_id_seq', 1, false);
+SELECT pg_catalog.setval('public.orders_id_seq', 5, true);
 
 
 --
@@ -384,11 +384,11 @@ ALTER TABLE ONLY public.orderservices
     ADD CONSTRAINT orderservices_serviceid_fkey FOREIGN KEY (serviceid) REFERENCES public.services(id) ON DELETE CASCADE;
 
 
--- Completed on 2025-10-23 20:12:25
+-- Completed on 2025-10-24 11:55:20
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict XjXF5a1r3CAubecKcCHA7wG1FEZgEvKRV2T3Qblg5wFFd5fF5kB3jEd0NHSyQd3
+\unrestrict EBfNDfgpVpp678ZC1MJJiwFdlym2w8kpf0zebzDd6J5psS8oGJ5jORTmU6Aefy8
 
