@@ -11,42 +11,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb79f663-6608-4a62-a216-8d9144849254" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MyApi/Models/DTOs/OrderDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyApi/Models/DTOs/UserDto.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Controllers/OrdersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Controllers/OrdersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Controllers/UsersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Data/atelier_backup.sql" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Data/atelier_backup.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Models/AtelierContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/AtelierContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Models/Service.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/Service.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/MyApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/MyApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/appsettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.deps.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.AssemblyReference.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.FileListAbsolute.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/apphost.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/ref/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/ref/MyApi.dll" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/refint/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/refint/MyApi.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/MyApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/MyApi.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/project.packagespec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +154,7 @@
       <workItem from="1761245063293" duration="11861000" />
       <workItem from="1761257246504" duration="751000" />
       <workItem from="1761283158056" duration="13650000" />
-      <workItem from="1761310357610" duration="714000" />
+      <workItem from="1761310357610" duration="4078000" />
     </task>
     <servers />
   </component>

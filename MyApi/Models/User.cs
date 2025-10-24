@@ -20,7 +20,8 @@ public class User
 
     [Required]
     public string LastName { get; set; }
-
+    
+    
     public string? Phone { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
