@@ -1,9 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using MyApi.Models;
+using MyApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-//настройка кодировки
+//настройки сервисов ДО builder.Build()
+
+// Настройка кодировки
 builder.Services.Configure<Microsoft.AspNetCore.Http.Json.JsonOptions>(options =>
 {
     options.SerializerOptions.PropertyNamingPolicy = null;
@@ -17,11 +20,30 @@ builder.Services.Configure<Microsoft.AspNetCore.Mvc.JsonOptions>(options =>
 builder.Services.AddDbContext<AtelierContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+// Настройка CORS для фронтенда ДО Build()
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend", policy =>
+    {
+        policy.WithOrigins("http://localhost:3000") 
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowCredentials();
+    });
+});
+
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Регистрация TelegramService
+builder.Services.AddScoped<TelegramService>();
+
+
+
 var app = builder.Build();
+
+// Middleware настройка ПОСЛЕ Build()
 
 if (app.Environment.IsDevelopment())
 {
@@ -29,11 +51,14 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+// Использование CORS 
+app.UseCors("AllowFrontend");
+
 app.UseHttpsRedirection();
 app.UseAuthorization();
 app.MapControllers();
 
-//endpoints
+// Endpoints
 app.MapGet("/", () => new  
 {
     Message = "API ателье",

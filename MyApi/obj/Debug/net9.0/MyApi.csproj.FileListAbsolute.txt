@@ -65,3 +65,10 @@ C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.d
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\BCrypt.Net-Next.dll
 C:\tmp\аип\Solution\MyApi\obj\Debug\net9.0\MyApi.sourcelink.json
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Microsoft.Extensions.Http.Polly.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Newtonsoft.Json.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Polly.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Polly.Extensions.Http.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Telegram.Bot.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Telegram.Bots.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Telegram.Bots.Extensions.Polling.dll

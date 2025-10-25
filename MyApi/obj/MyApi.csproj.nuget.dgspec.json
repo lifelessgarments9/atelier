@@ -70,6 +70,14 @@
             "Swashbuckle.AspNetCore.Annotations": {
               "target": "Package",
               "version": "[9.0.6, )"
+            },
+            "Telegram.Bot": {
+              "target": "Package",
+              "version": "[19.0.0, )"
+            },
+            "Telegram.Bots.Extensions.Polling": {
+              "target": "Package",
+              "version": "[5.9.0, )"
             }
           },
           "imports": [

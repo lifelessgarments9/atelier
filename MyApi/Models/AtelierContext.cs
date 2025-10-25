@@ -11,6 +11,8 @@ public class AtelierContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Service> Services { get; set; }
     public DbSet<Order> Orders { get; set; }
+    public DbSet<PendingRegistration> PendingRegistrations { get; set; }
+
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -38,7 +40,6 @@ public class AtelierContext : DbContext
         modelBuilder.Entity<User>(entity =>
         {
             entity.Property(u => u.Id).HasColumnName("id");
-            entity.Property(u => u.TgUsername).HasColumnName("tgusername");
             entity.Property(u => u.PasswordHash).HasColumnName("passwordhash"); 
             entity.Property(u => u.FirstName).HasColumnName("firstname");
             entity.Property(u => u.LastName).HasColumnName("lastname");
@@ -47,6 +48,9 @@ public class AtelierContext : DbContext
             entity.Property(u => u.UpdatedAt).HasColumnName("updatedat");
             entity.Property(u => u.IsActive).HasColumnName("isactive");
             entity.Property(u => u.Role).HasColumnName("role");
+            entity.Property(u => u.IsTelegramVerified).HasColumnName("istelegramverified");
+            entity.Property(u => u.Username).HasColumnName("username");
+            entity.Property(u => u.TelegramChatId).HasColumnName("telegramchatid");
         });
         //для Service
         modelBuilder.Entity<Service>(entity =>
@@ -61,7 +65,7 @@ public class AtelierContext : DbContext
 
         // Настройка индексов
         modelBuilder.Entity<User>()
-            .HasIndex(u => u.TgUsername)
+            .HasIndex(u => u.Username)
             .HasDatabaseName("idx_users_tgUsername");
 
         modelBuilder.Entity<Order>()

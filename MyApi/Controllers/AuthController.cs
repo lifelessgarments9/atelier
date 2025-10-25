@@ -1,10 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
 using MyApi.Models;
 using MyApi.Models.DTOs;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Cryptography;
-using System.Text;
+using MyApi.Services;
 
 namespace MyApi.Controllers
 {
@@ -13,49 +11,115 @@ namespace MyApi.Controllers
     public class AuthController : ControllerBase
     {
         private readonly AtelierContext _context;
-        public AuthController(AtelierContext context)
+        private readonly TelegramService _telegram;
+        private readonly ILogger<AuthController> _logger;
+
+        public AuthController(AtelierContext context, TelegramService telegram, ILogger<AuthController> logger)
         {
             _context = context;
+            _telegram = telegram;
+            _logger = logger;
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterDto dto)
+        public async Task<IActionResult> Register([FromBody] RegisterDto request)
         {
-            if (await _context.Users.AnyAsync(u => u.TgUsername == dto.TgUsername))
-                return BadRequest("Username already exists");
+            var cleanUsername = request.TgUsername.Replace("@", "").Trim();
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            // Проверяем, нет ли уже пользователя с таким username
+            
+            var existingUser = await _context.Users
+                .FirstOrDefaultAsync(u => u.Username == cleanUsername);
+                
+            if (existingUser != null)
+            {
+                return BadRequest(new { message = "Пользователь с таким username уже существует" });
+            }
+            
 
-            using var sha = SHA256.Create();
-            var hash = Convert.ToBase64String(sha.ComputeHash(Encoding.UTF8.GetBytes(dto.Password)));
+            // Генерируем токен для deep link
+            var token = Guid.NewGuid().ToString("N");
+            var deepLink = $"https://t.me/AtelierAuthBot?start=register_{token}";
 
+            // Сохраняем ожидающую регистрацию
+            var pendingReg = new PendingRegistration
+            {
+                Token = token,
+                Username = cleanUsername,
+                PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
+                CreatedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddMinutes(30)
+            };
+
+            _context.PendingRegistrations.Add(pendingReg);
+            await _context.SaveChangesAsync();
+
+            // Пытаемся отправить сообщение, но не блокируем процесс
+            try
+            {
+                var messageSent = await _telegram.SendMessageAsync(cleanUsername,
+                    $"🔐 **Регистрация в Atelier**\n\n" +
+                    $"Для завершения регистрации перейдите по ссылке:\n{deepLink}");
+
+                if (!messageSent)
+                {
+                    _logger.LogWarning($"Не удалось отправить сообщение пользователю @{cleanUsername}");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogWarning(ex, $"Ошибка отправки сообщения пользователю @{cleanUsername}");
+            }
+
+            // Всегда возвращаем успех с deep link
+            return Ok(new { 
+                message = "Регистрация начата",
+                deepLink = deepLink
+            });
+        }
+
+        [HttpPost("verify")]
+        public async Task<IActionResult> Verify([FromBody] VerifyTelegramDto request)
+        {
+            var cleanUsername = request.TgUsername.Replace("@", "").Trim();
+            
+            var pendingReg = await _context.PendingRegistrations
+                .FirstOrDefaultAsync(pr => pr.Username == cleanUsername && 
+                                         pr.VerificationCode == request.Code &&
+                                         pr.ExpiresAt > DateTime.UtcNow);
+
+            if (pendingReg == null)
+            {
+                return BadRequest(new { message = "Неверный код или код устарел" });
+            }
+
+            // Создаем пользователя
             var user = new User
             {
-                TgUsername = dto.TgUsername,
-                PasswordHash = hash,
-                Role = "Customer",
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow,
-                IsActive = true
+                Username = cleanUsername,
+                PasswordHash = pendingReg.PasswordHash,
+                TelegramChatId = pendingReg.TelegramChatId,
+                IsTelegramVerified = true
             };
 
             _context.Users.Add(user);
+            _context.PendingRegistrations.Remove(pendingReg);
             await _context.SaveChangesAsync();
 
-            return Ok(new { user.Id, user.TgUsername });
-        }
-
-        [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginDto dto)
-        {
-            using var sha = SHA256.Create();
-            var hash = Convert.ToBase64String(sha.ComputeHash(Encoding.UTF8.GetBytes(dto.Password)));
-
-            var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.TgUsername == dto.TgUsername && u.PasswordHash == hash);
-
-            if (user == null)
-                return Unauthorized("Invalid credentials");
-
-            return Ok(new { user.Id, user.TgUsername, user.Role });
+            return Ok(new { 
+                message = "Telegram успешно подтвержден",
+                username = cleanUsername
+            });
         }
     }
 }

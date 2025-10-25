@@ -24,7 +24,7 @@ public class UsersController : ControllerBase
             .Select(u => new UserDto
             {
                 Id = u.Id,
-                TgUsername = u.TgUsername,
+                TgUsername = u.Username,
                 FirstName = u.FirstName,
                 LastName = u.LastName,
                 Phone = u.Phone,
@@ -65,7 +65,7 @@ public class UsersController : ControllerBase
             return BadRequest("Пароль обязателен при создании пользователя");
 
         // Проверяем уникальность TgUsername
-        if (_context.Users.Any(u => u.TgUsername == userDto.TgUsername))
+        if (_context.Users.Any(u => u.Username == userDto.TgUsername))
             return BadRequest("Пользователь с таким Telegram username уже существует");
 
         // Хэшируем пароль
@@ -73,7 +73,7 @@ public class UsersController : ControllerBase
 
         var newUser = new User
         {
-            TgUsername = userDto.TgUsername,
+            Username = userDto.TgUsername,
             PasswordHash = passwordHash,
             FirstName = userDto.FirstName,
             LastName = userDto.LastName,
@@ -106,11 +106,11 @@ public class UsersController : ControllerBase
             return BadRequest("ID в пути не совпадает с ID в теле запроса");
 
         // Проверяем уникальность TgUsername (если меняется)
-        if (userDto.TgUsername != user.TgUsername && 
-            _context.Users.Any(u => u.TgUsername == userDto.TgUsername))
+        if (userDto.TgUsername != user.Username && 
+            _context.Users.Any(u => u.Username == userDto.TgUsername))
             return BadRequest("Пользователь с таким Telegram username уже существует");
 
-        user.TgUsername = userDto.TgUsername;
+        user.Username = userDto.TgUsername;
         user.FirstName = userDto.FirstName;
         user.LastName = userDto.LastName;
         user.Phone = userDto.Phone;
@@ -189,7 +189,7 @@ public class UsersController : ControllerBase
         return new UserDto
         {
             Id = user.Id,
-            TgUsername = user.TgUsername,
+            TgUsername = user.Username,
             FirstName = user.FirstName,
             LastName = user.LastName,
             Phone = user.Phone,

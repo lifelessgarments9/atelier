@@ -2,12 +2,12 @@
 -- PostgreSQL database dump
 --
 
-\restrict EBfNDfgpVpp678ZC1MJJiwFdlym2w8kpf0zebzDd6J5psS8oGJ5jORTmU6Aefy8
+\restrict 6bwt1Zu2ievy93Km6LpmmxRYwntMBEAZN6URi61sXk8U1UGStrgQZfmUfVd4Mxr
 
 -- Dumped from database version 17.6
 -- Dumped by pg_dump version 17.6
 
--- Started on 2025-10-24 11:55:20
+-- Started on 2025-10-25 10:27:58
 
 SET statement_timeout = 0;
 SET lock_timeout = 0;
@@ -134,10 +134,10 @@ ALTER SEQUENCE public.services_id_seq OWNED BY public.services.id;
 
 CREATE TABLE public.users (
     id integer NOT NULL,
-    tgusername character varying(255) NOT NULL,
+    tgusername character varying(255),
     passwordhash character varying(255) NOT NULL,
-    firstname character varying(100) NOT NULL,
-    lastname character varying(100) NOT NULL,
+    firstname character varying(100),
+    lastname character varying(100),
     phone character varying(20),
     createdat timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
     updatedat timestamp without time zone DEFAULT CURRENT_TIMESTAMP,
@@ -243,7 +243,7 @@ COPY public.users (id, tgusername, passwordhash, firstname, lastname, phone, cre
 -- Name: orders_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.orders_id_seq', 5, true);
+SELECT pg_catalog.setval('public.orders_id_seq', 9, true);
 
 
 --
@@ -384,11 +384,11 @@ ALTER TABLE ONLY public.orderservices
     ADD CONSTRAINT orderservices_serviceid_fkey FOREIGN KEY (serviceid) REFERENCES public.services(id) ON DELETE CASCADE;
 
 
--- Completed on 2025-10-24 11:55:20
+-- Completed on 2025-10-25 10:27:59
 
 --
 -- PostgreSQL database dump complete
 --
 
-\unrestrict EBfNDfgpVpp678ZC1MJJiwFdlym2w8kpf0zebzDd6J5psS8oGJ5jORTmU6Aefy8
+\unrestrict 6bwt1Zu2ievy93Km6LpmmxRYwntMBEAZN6URi61sXk8U1UGStrgQZfmUfVd4Mxr
 
