@@ -34,9 +34,9 @@ app.UseAuthorization();
 app.MapControllers();
 
 //endpoints
-app.MapGet("/", () => new  //?
+app.MapGet("/", () => new  
 {
-    Message = "API ателье работает!",
+    Message = "API ателье",
     Endpoints = new[]
     {
         "GET /api/orders - список заказов",

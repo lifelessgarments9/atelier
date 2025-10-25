@@ -1,4 +1,4 @@
-namespace MyApi.Models;
+namespace MyApi.Models.DTOs;
 using System.ComponentModel.DataAnnotations;
 
 public class OrderDto
@@ -26,7 +26,7 @@ public class OrderDto
     [Range(0.01, double.MaxValue, ErrorMessage = "Стоимость должна быть больше 0")]
     public decimal TotalPrice { get; set; }
     
-    public string Status { get; set; } = "Новый";
+    public string Status { get; set; } = "New";
     
 
     public DateTime? CreatedAt { get; set; }

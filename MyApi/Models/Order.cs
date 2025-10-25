@@ -30,7 +30,7 @@ public class Order
     public decimal TotalPrice { get; set; }
 
     [Required]
-    public string Status { get; set; } = "Новый";
+    public string Status { get; set; } = "New";
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;

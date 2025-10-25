@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MyApi.Models;
+using MyApi.Models.DTOs;
 namespace MyApi.Controllers;
 
 [ApiController]

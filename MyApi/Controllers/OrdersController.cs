@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 
 using MyApi.Models;
+using MyApi.Models.DTOs;
 namespace MyApi.Controllers;
 
 [ApiController]
@@ -68,7 +69,7 @@ public class OrdersController : ControllerBase
             ServiceIds = orderDto.ServiceIds,
             ServiceNames = orderDto.ServiceNames,
             TotalPrice = orderDto.TotalPrice,
-            Status = orderDto.Status ?? "Новый",
+            Status = orderDto.Status ?? "New",
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };
