@@ -199,6 +199,20 @@ public class UsersController : ControllerBase
             IsActive = user.IsActive
         };
     }
+    
+    // GET: api/users/by-username/{username} - поиск пользователя по username
+    [HttpGet("by-username/{username}")]
+    public IActionResult GetByUsername(string username)
+    {
+        var user = _context.Users
+            .FirstOrDefault(u => u.Username == username && u.IsActive);
+        
+        if (user == null)
+            return NotFound();
+            
+        return Ok(MapToDto(user));
+    }
+    
 }
 
 /* (http взаимодействие с бд)
@@ -211,4 +225,6 @@ public class UsersController : ControllerBase
 Создать нового пользователя [HttpPost] +
 
 Удалить пользователя [HttpDelete("{id}")] - 
+
+GET: api/users/by-username/{username} - поиск пользователя по username
 */

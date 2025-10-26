@@ -63,6 +63,10 @@
               "target": "Package",
               "version": "[9.0.6, )"
             },
+            "React.Router": {
+              "target": "Package",
+              "version": "[5.2.12, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[9.0.6, )"

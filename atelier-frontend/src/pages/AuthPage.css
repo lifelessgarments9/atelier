@@ -1,0 +1,225 @@
+/* AuthPage.css */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.auth-container {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.back-btn:hover {
+    color: #333;
+}
+
+.auth-tabs {
+    display: flex;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #eee;
+}
+
+.tab {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 1rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.tab.active {
+    color: #e74c3c;
+    border-bottom: 2px solid #e74c3c;
+    margin-bottom: -2px;
+}
+
+.auth-form h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #e74c3c;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.auth-submit-btn:hover {
+    background: #c0392b;
+}
+
+
+.output {
+    background: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-top: 1rem;
+    white-space: pre-wrap;
+    font-family: monospace;
+}
+
+/* Стили для переключателя методов регистрации */
+.register-methods {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    background: #f8f9fa;
+    padding: 5px;
+}
+
+.method-tab {
+    flex: 1;
+    background: none;
+    border: none;
+    padding: 12px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.method-tab.active {
+    background: white;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    color: #e74c3c;
+}
+
+.method-tab:not(.active):hover {
+    background: rgba(255,255,255,0.7);
+}
+
+.method-content {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.input-group small {
+    display: block;
+    margin-top: 5px;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.register-note {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #e8f4fd;
+    border-radius: 8px;
+    border-left: 4px solid #2196f3;
+}
+
+.register-note p {
+    margin: 0;
+    color: #1976d2;
+    font-size: 0.9rem;
+}
+
+/* Адаптивность */
+@media (max-width: 480px) {
+    .register-methods {
+        flex-direction: column;
+    }
+
+    .method-tab {
+        text-align: center;
+    }
+}
+
+.login-methods {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    background: #f8f9fa;
+    padding: 5px;
+}
+/* Стили для опций входа */
+.login-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.remember-me {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #666;
+    cursor: pointer;
+}
+
+.remember-me input {
+    margin: 0;
+}
+
+.forgot-password {
+    color: #e74c3c;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.forgot-password:hover {
+    color: #c0392b;
+    text-decoration: underline;
+}
+.login-options {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+}

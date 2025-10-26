@@ -72,3 +72,13 @@ C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Polly.Extensions.Http.dll
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Telegram.Bot.dll
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Telegram.Bots.dll
 C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Telegram.Bots.Extensions.Polling.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\AdvancedStringBuilder.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\JavaScriptEngineSwitcher.Core.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\JSPool.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Microsoft.DotNet.PlatformAbstractions.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\Microsoft.Extensions.DependencyModel.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\React.AspNet.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\React.AspNet.Middleware.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\React.Core.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\React.Router.dll
+C:\tmp\аип\Solution\MyApi\bin\Debug\net9.0\ru-RU\JavaScriptEngineSwitcher.Core.resources.dll

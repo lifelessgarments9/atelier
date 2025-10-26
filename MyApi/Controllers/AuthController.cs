@@ -26,16 +26,6 @@ namespace MyApi.Controllers
         {
             var cleanUsername = request.TgUsername.Replace("@", "").Trim();
             
-            
-            
-            
-            
-            
-            
-            
-            
-            
-            
             // Проверяем, нет ли уже пользователя с таким username
             
             var existingUser = await _context.Users
@@ -119,6 +109,26 @@ namespace MyApi.Controllers
             return Ok(new { 
                 message = "Telegram успешно подтвержден",
                 username = cleanUsername
+            });
+        }
+        
+        [HttpPost("login")]
+        public async Task<IActionResult> Login([FromBody] RegisterDto request)
+        {
+            var cleanUsername = request.TgUsername.Replace("@", "").Trim();
+            
+            var user = await _context.Users
+                .FirstOrDefaultAsync(u => u.Username == cleanUsername);
+                
+            if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+            {
+                return BadRequest(new { message = "Неверный username или пароль" });
+            }
+
+            return Ok(new { 
+                message = "Вход выполнен успешно",
+                username = user.Username,
+                telegramVerified = user.IsTelegramVerified
             });
         }
     }

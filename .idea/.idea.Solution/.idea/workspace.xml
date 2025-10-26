@@ -11,26 +11,64 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cb79f663-6608-4a62-a216-8d9144849254" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MyApi/Controllers/AuthController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/MyApi/Models/DTOs/RegisterDto.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atelier-frontend/src/pages/HomePage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atelier-frontend/src/pages/NewOrderPage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atelier-frontend/src/pages/NewOrderPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atelier-frontend/src/pages/ProfilePage.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/atelier-frontend/src/pages/ProfilePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Solution/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Controllers/OrdersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Controllers/OrdersController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Controllers/ServicesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Controllers/ServicesController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/Controllers/AuthController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Controllers/AuthController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/Controllers/UsersController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Controllers/UsersController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/Models/DTOs/OrderDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/DTOs/OrderDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Models/DTOs/UserDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/DTOs/UserDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Models/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/Order.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Models/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Models/User.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MyApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/MyApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/MyApi.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/bin/Debug/net9.0/MyApi.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.MvcApplicationPartsAssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.MvcApplicationPartsAssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/MyApi.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/ref/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/ref/MyApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/refint/MyApi.dll" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/Debug/net9.0/refint/MyApi.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/MyApi.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/MyApi.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyApi/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/MyApi/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/MyApi/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/src/pages/AuthPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/src/pages/AuthPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/atelier-frontend/src/pages/AuthPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/atelier-frontend/src/pages/AuthPage.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DpaMonitoringSettings">
+    <option name="firstShow" value="false" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -49,6 +87,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/atelier-frontend/package-lock.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/atelier-frontend/package.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -67,13 +106,16 @@
     &quot;.NET Launch Settings Profile.atelier-backend: http.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;ToolWindow.Monitoring.ShowToolbar&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\JetBrains Rider 2024.3.6\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -162,7 +204,11 @@
       <workItem from="1761332357485" duration="669000" />
       <workItem from="1761333955904" duration="73000" />
       <workItem from="1761337378925" duration="732000" />
-      <workItem from="1761374774891" duration="1591000" />
+      <workItem from="1761374774891" duration="10377000" />
+      <workItem from="1761389678822" duration="14290000" />
+      <workItem from="1761417725765" duration="14291000" />
+      <workItem from="1761460859844" duration="19501000" />
+      <workItem from="1761482914053" duration="4061000" />
     </task>
     <servers />
   </component>
