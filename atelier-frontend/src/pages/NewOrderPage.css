@@ -1,0 +1,151 @@
+.new-order-page {
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.container {
+    position: relative;
+}
+
+.back-btn {
+    background: none;
+    border: none;
+    color: #007bff;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.steps {
+    display: flex;
+    gap: 20px;
+    margin: 20px 0;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.step {
+    padding: 8px 16px;
+    border-radius: 20px;
+    background: #f5f5f5;
+    color: #666;
+}
+
+.step.active {
+    background: #007bff;
+    color: white;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.service-card {
+    border: 2px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.service-card.selected {
+    border-color: #007bff;
+    background: #f0f8ff;
+}
+
+.checkbox {
+    float: right;
+    color: #007bff;
+    font-weight: bold;
+}
+
+.price {
+    font-weight: bold;
+    color: #28a745;
+    margin-top: 10px;
+}
+
+.summary, .order-preview {
+    margin: 20px 0;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0;
+}
+
+.total {
+    font-weight: bold;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+}
+
+.form {
+    margin: 20px 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.user-note {
+    padding: 10px;
+    background: #e7f3ff;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-primary {
+    background: #007bff;
+    color: white;
+}
+
+.btn-primary:disabled {
+    background: #ccc;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.error {
+    color: #dc3545;
+    font-size: 12px;
+    margin-top: 5px;
+}
